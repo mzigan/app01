@@ -1,8 +1,8 @@
 const radius = 20    // радиус молекулы
-const speed = 30     // максимальная скорость 
-const cnt = 30       // кол-во молекул
-const moleculs = []  // массив молекул
+const speed = 10     // максимальная скорость 
+const cnt = 30      // кол-во молекул
 
+let moleculs = []  // массив молекул
 let width   // ширина холста
 let height  // высота холста
 let ctx     // контекст холста
@@ -19,8 +19,8 @@ function getCanvasData() {
     width = parseInt(canvas.getAttribute('width'))
     height = parseInt(canvas.getAttribute('height'))
 
-    ctx.fillStyle = 'antiquewhite' // цвет холста
-    ctx.strokeStyle = 'red'        // цвет молекул
+    ctx.fillStyle = 'antiquewhite' // цвет заливки холста
+    ctx.strokeStyle = 'blue'        // цвет рисования молекул
     ctx.lineWidth = 1              // толщина пера
 }
 
@@ -55,19 +55,19 @@ function render() {
         // проверка выхода за границы аквариума
         // если есть нарушение границ, то корректировка координат и изменений скорости на противоположную
         // в зависимости от конкретной границы
-        if (m.x > width - radius) {
+        if (m.x > width - radius) {  // правая граница
             m.x = width - radius
             m.vx = -m.vx
         }
-        if (m.x < radius) {
+        if (m.x < radius) {          // левая граница
             m.x = radius
             m.vx = -m.vx
         }
-        if (m.y > height - radius) {
+        if (m.y > height - radius) { // нижняя граница
             m.y = height - radius
             m.vy = -m.vy
         }
-        if (m.y < radius) {
+        if (m.y < radius) {          // верхняя граница
             m.y = radius
             m.vy = -m.vy
         }
