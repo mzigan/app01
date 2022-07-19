@@ -9,6 +9,10 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 800,
     height: 800,
+    minHeight: 800,
+    maxHeight: 800,
+    minWidth: 800,
+    maxWidth: 800    ,
     autoHideMenuBar: true,
     backgroundColor: 'antiquewhite',
     show: false,
