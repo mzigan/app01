@@ -86,7 +86,7 @@ function render() {
 function run() {
     getCanvasData()  // здесь получаем данные по холсту
     initMoleculs()   // здесь инициализируем молекулы
-    
+
     setInterval(() => render(), 10) // здесь каждые 10 мс вызывается отрисовка холста
 }
 

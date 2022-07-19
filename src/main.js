@@ -12,22 +12,22 @@ const createWindow = () => {
     minHeight: 800,
     maxHeight: 800,
     minWidth: 800,
-    maxWidth: 800    ,
+    maxWidth: 800,
     autoHideMenuBar: true,
     backgroundColor: 'antiquewhite',
     show: false,
     webPreferences: {
-        webviewTag: true,
-        nodeIntegration: true,
-        contextIsolation: false,
+      webviewTag: true,
+      nodeIntegration: true,
+      contextIsolation: false,
     }
   });
 
   mainWindow.once('ready-to-show', () => {
     mainWindow.show()
   })
-  
-  mainWindow.loadFile(path.join(__dirname, 'app.html'));
+
+  mainWindow.loadFile(path.join(__dirname, 'index.html'));
 };
 
 app.on('ready', createWindow);
