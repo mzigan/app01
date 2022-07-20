@@ -1,6 +1,6 @@
 {
-  "name": "moleculs",
-  "productName": "moleculs",
+  "name": "molecules",
+  "productName": "molecules",
   "version": "1.0.0",
   "description": "Electron application",
   "main": "src/main.js",
@@ -24,7 +24,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "moleculs"
+            "name": "molecules"
           }
         },
         {
