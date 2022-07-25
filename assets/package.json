@@ -1,0 +1,38 @@
+{
+    "name": "molecules",
+    "productName": "Molecules", 
+    "version": "0.0.1",
+    "author": {
+        "name": "training-2022",
+        "email": "training-2022@mail.ru",
+        "url": "https://github.com/mtraining-2022"
+    },
+    "homepage": "https://github.com/mtraining-2022/app00",
+    "description": "Electron application",
+    "main": "main.js",
+    "build": {
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ],
+            "category": "AudioVideo"
+        },
+        "win": {
+            "target": "nsis"
+        },
+        "directories": {
+            "buildResources": "assets",
+            "output": "release"
+        },
+        "nsis": {
+            "oneClick": false,
+            "perMachine": false,
+            "allowElevation": true,
+            "allowToChangeInstallationDirectory": true
+        }
+    },
+    "devDependencies": {
+        "electron": "^19.0.8"
+    }
+}

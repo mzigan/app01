@@ -2,7 +2,7 @@ const radius = 20    // радиус молекулы
 const speed = 10     // максимальная скорость 
 const cnt = 30      // кол-во молекул
 
-let moleculs = []  // массив молекул
+let molecules = []  // массив молекул
 let width   // ширина холста
 let height  // высота холста
 let ctx     // контекст холста
@@ -25,14 +25,14 @@ function getCanvasData() {
 }
 
 // инициализация массива молекул со случайными характеристиками
-function initMoleculs() {
+function initMolecules() {
     for (let i = 0; i < cnt; i++) {
         // случайные начальные угол и скорость молекулы
         const angle = randomRange(0, 360) * Math.PI / 180
         const curv = randomRange(1, speed)
 
         // добавление молекулы в массив
-        moleculs.push({
+        molecules.push({
             x: randomRange(radius, width - radius),  // случайная начальная координата x
             y: randomRange(radius, height - radius), // случайная начальная координата y
             vx: curv * Math.sin(angle) / 10,         // горизонтальная скорость молекулы
@@ -47,7 +47,7 @@ function render() {
     ctx.fillRect(0, 0, width, height)
 
     // вычисляем новые характеристики молекул
-    for (let m of moleculs) {
+    for (let m of molecules) {
         // координаты в соответствии с их горизонтальной и вертикальной скоростями
         m.x = m.x + m.vx
         m.y = m.y + m.vy
@@ -75,7 +75,7 @@ function render() {
 
     // отрисовка всех полекул в цикле с новыми координатами
     ctx.beginPath()
-    for (let m of moleculs) { // цикл по молекулам
+    for (let m of molecules) { // цикл по молекулам
         ctx.moveTo(m.x + radius, m.y)
         ctx.arc(m.x, m.y, radius, 0, Math.PI * 2, true)  // рисуем окружность
     }
@@ -85,7 +85,7 @@ function render() {
 // если вызвать эту функцию, то программа начнёт работать
 function run() {
     getCanvasData()  // здесь получаем данные по холсту
-    initMoleculs()   // здесь инициализируем молекулы
+    initMolecules()   // здесь инициализируем молекулы
 
     setInterval(() => render(), 10) // здесь каждые 10 мс вызывается отрисовка холста
 }
