@@ -5,7 +5,7 @@
   "scripts": {
     "start": "electron .",
     "make:win": ".\\build.bat",
-    "make:linux": "./build.sh"
+    "make:linux": "chmod u+x ./build.sh && ./build.sh"
   },
   "devDependencies": {
     "electron": "^19.0.8"
